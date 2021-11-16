@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout>
+				<ScriptPatternSelector
+					defaultPattern="{level: %p{lowerCase=true} label:oav-api, message:%m}%n">
+					<Script name="MDCSelector" language="javascript"><![CDATA[
+                    result = null;
+                    currContext = logEvent.getContextData().toMap();
+                    if (!(currContext.length === 0)) {
+                    if (currContext["requestContextId"]||currContext["securityContextId"] || currContext["tenantContextId"])
+                    result = "WithMDC";
+                    }
+                    result;
+               ]]>
+					</Script>
+					<PatternMatch key="WithMDC"
+						pattern="{level: %p{lowerCase=true}, meta:{x-MyPlace-RequestContext:%X{requestContextId}, x-MyPlace-TenantContext:%X{tenantContextId}, x-MyPlace-SecurityContext:%X{securityContextId}, meta:{}}, label:my-synchronizer, message:%m}%n" />
+				</ScriptPatternSelector>
+			</PatternLayout>
+			<ThresholdFilter level="trace" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="all">
+			<AppenderRef ref="Console" level="info" />
+		</Root>
+	</Loggers>
+</Configuration>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+	<!--<include resource="org/springframework/boot/logging/logback/base.xml" /> -->
+        <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+	<springProperty name="GESTEME_LOGSTASH_URL" source="logstash.host" />
+	<springProperty name="GESTEME_LOGSTASH_PORT" source="logstash.port" />
+        <springProperty name="GESTEME_ROOT_LOG_LEVEL" source="logstash.root-loglevel" />
+        <springProperty name="GESTEME_SPRING_LOG_LEVEL" source="logstash.spring-loglevel" />
+        <springProperty name="GESTEME_MYP3_LOG_LEVEL" source="logstash.myp3-loglevel" />
+	<!-- Logstash-Configuration -->
+	<appender name="logstash"
+		class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+		<destination>${GESTEME_LOGSTASH_URL}:${GESTEME_LOGSTASH_PORT}</destination>
+		<encoder class="net.logstash.logback.encoder.LogstashEncoder">
+			<customFields>{"service_name":"gesteme"}</customFields>
+			<fieldNames>
+				<message>log_message</message>
+			</fieldNames>
+		</encoder>
+		<keepAliveDuration>5 minutes</keepAliveDuration>
+	</appender>
+
+	<root level="${GESTEME_ROOT_LOG_LEVEL}">
+		<appender-ref ref="logstash" />
+	</root>
+	<logger name="org.springframework" level="${GESTEME_SPRING_LOG_LEVEL}">
+		<appender-ref ref="logstash" />
+	</logger>
+	<logger name="it.regioneveneto.myp3" level="${GESTEME_MYP3_LOG_LEVEL}">
+		<appender-ref ref="logstash" />
+	</logger>
+</configuration>

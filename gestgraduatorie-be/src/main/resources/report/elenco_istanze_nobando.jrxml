@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final utlizzo versione della libreria JasperReports6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f014e47a-6070-4a2e-8005-f7d4850cfe6a">
+	<style name="Zebra" mode="Opaque" backcolor="#FFFFFF" isBlankWhenNull="false">
+		<box>
+			<pen lineColor="#E6E6E6"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#EDECE8"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="dataset1" uuid="e3790df2-3788-48e1-a894-8576e197e0ca">
+		<field name="city" class="java.lang.String">
+			<fieldDescription><![CDATA[_THIS]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="fileNameCompanylogo" class="java.lang.String"/>
+	<parameter name="title" class="java.lang.String"/>
+	<parameter name="bando" class="java.lang.String"/>
+	<parameter name="num_protocollo" class="java.lang.String"/>
+	<parameter name="nome" class="java.lang.String"/>
+	<parameter name="cognome" class="java.lang.String"/>
+	<parameter name="codice_fiscale" class="java.lang.String"/>
+	<parameter name="punteggio" class="java.lang.String"/>
+	<field name="bando" class="java.lang.String"/>
+	<field name="num_protocollo" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="cognome" class="java.lang.String"/>
+	<field name="codice_fiscale" class="java.lang.String"/>
+	<field name="punteggio" class="java.lang.String"/>
+	<title>
+		<band height="84" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="50" height="50" uuid="c56c9492-eb88-4d77-84d9-3157455c80b2"/>
+				<imageExpression><![CDATA[$P{fileNameCompanylogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="35">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<staticText>
+				<reportElement mode="Opaque" x="35" y="4" width="75" height="30" backcolor="#D1D1D1" uuid="c9f5d4e4-c10c-4e96-8d1a-3389abf5761c">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="PositionType" value="Float"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded="false"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Bando]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="110" y="4" width="70" height="30" backcolor="#D1D1D1" uuid="80a7fc31-ba48-48de-9276-d73522541a49">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9" isBold="true" isItalic="false" isUnderline="false"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[N. Protocollo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="180" y="4" width="98" height="30" backcolor="#D1D1D1" uuid="0fada797-d7aa-4272-85b7-06696b08c376">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isItalic="false" isUnderline="false"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="278" y="4" width="92" height="30" backcolor="#D1D1D1" uuid="94529855-a5ad-4eb8-b29c-053eaae15cb3">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isItalic="false" isUnderline="false"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Cognome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="4" width="92" height="30" backcolor="#D1D1D1" uuid="a6d5edee-0ec7-4f3c-af2d-7d2cea1e578f">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isItalic="false" isUnderline="false"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Codice Fiscale]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="462" y="4" width="65" height="30" backcolor="#D1D1D1" uuid="a80faad3-b832-4c6a-aef9-8d6d29e207f6">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isItalic="false" isUnderline="false"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Punteggio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Zebra" stretchType="RelativeToTallestObject" x="35" y="0" width="75" height="32" uuid="8b4ea80d-4a13-46fa-90cc-9a42c4833ec2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<pen lineWidth="0.25" lineColor="#A19F9F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bando}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Zebra" stretchType="RelativeToTallestObject" x="110" y="0" width="70" height="32" uuid="8b4ea80d-4a13-46fa-90cc-9a42c4833ec2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<pen lineWidth="0.25" lineColor="#A19F9F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{num_protocollo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Zebra" stretchType="RelativeToTallestObject" x="180" y="0" width="98" height="32" uuid="8b4ea80d-4a13-46fa-90cc-9a42c4833ec2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<pen lineWidth="0.25" lineColor="#A19F9F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Zebra" stretchType="RelativeToTallestObject" x="278" y="0" width="92" height="32" uuid="8b4ea80d-4a13-46fa-90cc-9a42c4833ec2"/>
+				<box leftPadding="10">
+					<pen lineWidth="0.25" lineColor="#A19F9F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cognome}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Zebra" stretchType="RelativeToTallestObject" x="370" y="0" width="92" height="32" uuid="8b4ea80d-4a13-46fa-90cc-9a42c4833ec2">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<pen lineWidth="0.25" lineColor="#A19F9F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codice_fiscale}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Zebra" stretchType="RelativeToTallestObject" x="462" y="0" width="65" height="32" uuid="8b4ea80d-4a13-46fa-90cc-9a42c4833ec2">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<pen lineWidth="0.25" lineColor="#A19F9F"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#A19F9F"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#A19F9F"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#A19F9F"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#A19F9F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{punteggio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

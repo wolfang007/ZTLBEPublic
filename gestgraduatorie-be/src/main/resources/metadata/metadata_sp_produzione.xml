@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+                   	entityID="https://cdnbandi.regione.veneto.it/bonusoccupazionale-covid-fse" >
+
+	<md:SPSSODescriptor AuthnRequestsSigned="true"
+                  		WantAssertionsSigned="true"
+                  		protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+		<md:KeyDescriptor use="signing">
+			<ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+				<ds:X509Data>
+					<ds:X509Certificate>MIIDZjCCAk6gAwIBAgIEXwShwDANBgkqhkiG9w0BAQUFADB1MRcwFQYJKoZIhvcN
+AQkBFghhQGVuZy5pdDELMAkGA1UEBhMCSVQxETAPBgNVBAgMCGNhbXBhbmlhMQ8w
+DQYDVQQHDAZuYXBvbGkxDDAKBgNVBAoMA2VuZzEMMAoGA1UECwwDZXNsMQ0wCwYD
+VQQDDARydmNwMB4XDTIwMDcwNzE2MjUxN1oXDTMwMDcwNzE2MjUxN1owdTEXMBUG
+CSqGSIb3DQEJARYIYUBlbmcuaXQxCzAJBgNVBAYTAklUMREwDwYDVQQIDAhjYW1w
+YW5pYTEPMA0GA1UEBwwGbmFwb2xpMQwwCgYDVQQKDANlbmcxDDAKBgNVBAsMA2Vz
+bDENMAsGA1UEAwwEcnZjcDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+AM0+awJI5/3Br8Q2sIMEYDTUEFCNU+SfCTzKIXhpvOTK3RWc4dCrdzWiszvlk7X1
+ug5hSiTSUhObVri3Do2gXu/cou/b3VY8IIUmKv5YjYsIqRZhJrB0dHVhtxLcC9ei
+7D30Zt3Rg/0o8hrhNr4lNNHzS/24RQH1p1Ms1nsg8/XwSxn1mnfaHvTPqAk8VnVf
+tzBsuRGoFIq+CaB4oebAqoMlWsQ4ZwObW7OsjaP+Q75NwAo1QcHUzCrjEEQjZlEu
+kUs7RPWkoLFhEes4WaIhIAjcU+u879MKBQkU3yArCkFUaDb6S3r3HI9EvQF02k0z
+dh2GoXkUcA8R1yv53rQHGt0CAwEAATANBgkqhkiG9w0BAQUFAAOCAQEAAnTim9rJ
+ChCYI5XVFFywT6XaP76U5EzsYEOIiAJWvn4hOID6ztwgn11jk51MufFjCDwIXIbx
+m63DCvLKVkJXPJwHJm7L+yxn+xNHIBq84JNs95WgR4+kkANZ7lFteYSkfIvcR3Y1
+/R1cp5ehZpB9CugQw/zRJW0n4IO9+GlfWq7NzPskUALCugiAj166Vo0n2hmy+pw5
+uxmojLEx7Dp/9D/nK/9T4lWBDHQ5XrIPG9gQwcUhOkmxzm4xjIKHfb8JKnoAuvNF
+WDLUt+/spZiHqRZXhYu+CFW2LgkMXJ78Ksf9FJvpQ8skgjkFXs59RW03nFjnwbxA
+JqfiQIlZ1bKNIA==</ds:X509Certificate>
+				</ds:X509Data>
+			</ds:KeyInfo>
+		</md:KeyDescriptor>
+
+		<md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+                      			Location="https://cdnbandi.regione.veneto.it/bonusoccupazionale-covid-fse-be/saml/logout"/>
+
+		<md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                      			Location="https://cdnbandi.regione.veneto.it/bonusoccupazionale-covid-fse-be/saml/logout"/>
+
+		<md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+		<md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+		<md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+
+		<md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                           			Location="https://cdnbandi.regione.veneto.it/bonusoccupazionale-covid-fse-be/saml/SSO"
+                           			index="0"
+                           			isDefault="true"/>
+
+	</md:SPSSODescriptor>
+</md:EntityDescriptor>

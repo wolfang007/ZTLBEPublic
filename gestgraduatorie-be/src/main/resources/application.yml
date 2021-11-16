@@ -1,0 +1,118 @@
+server:
+  servlet:
+    context-path: /gestgraduatorie
+  port: 9081
+
+spring:
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gestbandi
+    #url: jdbc:postgresql://161.27.17.193:5432/evecal
+    username: gestbandi
+    password: gestbandi
+
+  
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.hibernate: ERROR
+    it.regioneveneto.myp3.regfragilita: info
+    org.apache.http: DEBUG
+        
+gestgraduatorie:
+   #SAML CONFIGURATION
+   saml:
+      appBaseUrl: https://myid.myplace.tz.eng.it/idp/
+      appEntityId: https://myid.myplace.tz.eng.it/idp/
+      contextProviderServerScheme: http
+      contextProviderServerName: 161.27.18.34
+      contextProviderServerPort: 9081
+      includeServerPortInRequestURL: true
+      idp-app-id: https://myid.myplace.tz.eng.it/idp/
+      idp-entity-id: https://myid.myplace.tz.eng.it/idp/
+      idp-metadata:
+         filepath: C:\Users\cminieri\git\MyCityGestGraduatorie\configurazioneGraduatorie\saml\
+         filename: idp-tz-metadata.xml
+      keystore:
+         filepath: C:\Users\cminieri\git\MyCityGestGraduatorie\configurazioneGraduatorie\saml\
+         filename: server.keystore
+         alias-cert: evecal
+         cert-pwd: evecal
+      service-provider-metadata:
+         filepath: C:\Users\cminieri\git\MyCityGestGraduatorie\configurazioneGraduatorie\metadata\
+         filename: metadata_sp_localhost.xml
+      successURLRedirect: http://161.27.18.34:9081/gestgraduatorie/access
+   #configurazione jwt token
+   auth:
+      access-token-secure: false  #TODO: mettere a true su https
+      jwt-secret: 3kd$$o110llfKFWEp1@@ai2OO$dsD1oP  
+      allowed-origin-host:
+         http://161.27.18.34:9081
+         #http://161.27.56.39:9081 
+   #configurazione endpoint myprofile
+   myprofile:
+      host: http://myprofile-rw-private.myplace.tz.eng.it
+      port: 8080
+      baseUri: /myprofile-server
+      apiOrgans: /api/organs
+      apiProfile: /api/profile
+      apiTenants: /api/tenants
+      filtroOrgans: UFF_GESTEM-
+      filtroAcl: regfr.
+   tenantRegionale: C_DEMO
+   report:
+      templateBasePath: C:\Users\cminieri\git\MyCityGestGraduatorie\gestgraduatorie-be\src\main\resources\report
+      templateCompilato: false
+      elencoIstanzePDF: elencoIstanze.pdf
+      elencoIstanzeXLS: elencoIstanze.xls
+      elencoIstanzeCSV: elencoIstanze.csv   
+      templateElencoIstanze: elenco_istanze.jrxml
+      templateElencoIstanzeNoBando: elenco_istanze_nobando.jrxml     
+      images:
+         basePath: C:\Users\cminieri\git\MyCityGestGraduatorie\gestgraduatorie-be\src\main\resources\report\images
+         fileNameCheckbox: check-box.png
+         fileNameUncheckbox: uncheck-box.png
+         fileNameCompanylogo: company_logo.png
+   
+   #MYboxRepository
+   mybox:
+      myBoxConfigurationFilePath: C:\Users\cminieri\git\MyCityGestGraduatorie\gestgraduatorie-be\src\main\resources\mybox.properties
+   #MyRegistry indirizzo locale
+   myregistry:
+      url: http://192.168.1.7:8500/my-registry/user/map/entry
+
+   #MyPortal indirizzo
+   mypa:
+      url: http://myintranet-cdemo.local:8300/mypa/
+      #http://myintranet-cdemo.local:8300/mypa/C_DEMO/instanceform/5fce1cd4192fd101c43bc884
+      
+   #MyOperatorRegistry indirizzo locale
+   myoperatorregistry:
+      url: http://172.18.0.6:8600/my-operator-registry/user/map/entry
+   C_DEMO:
+    soglia:
+      eta: 75
+      isee: 10000.55
+      nucleo: 5
+      comune: 028060
+   C_ENTE-A:
+    soglia:
+      eta: 45
+      isee: 11000
+      nucleo: 1
+      comune: 027042
+   C_ENTE-B:
+    soglia:
+      eta: 35
+      isee: 110
+      nucleo: 5
+      comune: 023091
+   DEFAULT:
+    soglia:
+      eta: 75
+      isee: 10
+      nucleo: 5
+      comune: 28060
+      
